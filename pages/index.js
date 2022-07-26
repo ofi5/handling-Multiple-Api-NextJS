@@ -1,25 +1,26 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+
 import FetchApi from '../components/FetchApi'
 
 export async function getStaticProps() {
-  const res = await fetch(`https://random-data-api.com/api/appliance/random_appliance?size=20`)
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=1`)
   const data = await res.json()
-  
+
   return {
       props: { 
-          data, 
+          data,
       }
   }
 
 }
-export default function Home({data}) {
-  return (<div>
-    
-    <FetchApi data={data}/>
-    </div>
-   
-      
-  )
+
+export default function Persons ({data}) {
+    return(
+        <div>
+          <FetchApi data={data} />
+
+              
+        </div>
+        )
 }
+
+
