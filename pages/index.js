@@ -1,4 +1,4 @@
-
+import React from 'react';
 import FetchApi from '../components/FetchApi'
 
 export async function getStaticProps() {
