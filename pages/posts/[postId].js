@@ -1,8 +1,5 @@
 import {
-  Card,
-  CardContent,
-  Typography,
-  Container,
+  Container
 } from '@mui/material';
 
 export async function getServerSideProps(context) {
@@ -21,10 +18,10 @@ export async function getServerSideProps(context) {
   };
 }
 
-export default function Post({ user }) {
-    console.log(user)
+export default function Post({user}) {
+    
   return (
-    <div>
+    
       <Container
       sx={{
         display: 'block',
@@ -39,6 +36,6 @@ export default function Post({ user }) {
       
       </Container>
       
-    </div>
+    
   );
 }

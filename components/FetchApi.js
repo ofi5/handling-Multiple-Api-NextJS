@@ -12,6 +12,7 @@ import { boxSizing, margin, textAlign, width } from '@mui/system';
 
 
 
+
  const FetchApi = ({data, images}) => {
     
 
