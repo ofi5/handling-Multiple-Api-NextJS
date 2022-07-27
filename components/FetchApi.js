@@ -43,6 +43,7 @@ import { boxSizing, margin, textAlign, width } from '@mui/system';
       finalData.map((item) => (
         <Card
         elevation={0}
+        key={item[1].id}
         sx={{
           maxWidth: '100%',
           textAlign:'center',
@@ -56,13 +57,14 @@ import { boxSizing, margin, textAlign, width } from '@mui/system';
         }}
         
       >
-    <CardContent>
+    <CardContent key={item[1].id}>
 
          <Link href={`/posts/${item[0].id}`} passHref key={item[0].id}>
 
           <div key={item[0].id} style={{/*border:'solid 2px red',*/ width:'100%', display:'flex' }}>
            <Image 
               loader={myLoader}
+              key={item[0].id}
               // border={"solid 2px green"}
               src={`/${item[1].id}/${item[1].width}/${item[1].height}.jpg`}
             
@@ -70,7 +72,7 @@ import { boxSizing, margin, textAlign, width } from '@mui/system';
               height="100px"
 
             />
-            <Typography fontWeight="bold" variant="body1" sx={{marginLeft:'30px'}}>
+            <Typography fontWeight="bold" variant="body1" sx={{marginLeft:'30px' }}>
                       Title:{item[0].title} 
             </Typography>
           </div>
