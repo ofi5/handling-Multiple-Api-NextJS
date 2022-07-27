@@ -17,8 +17,8 @@ const FetchApi = ({ data, images }) => {
   return (
     <div>
       <h1 style={{ textAlign: "center" /*,border:'solid 2px green'*/ }}>
-        {" "}
-        Handling Mulitple Api's
+        
+        Handling Mulitple ApiS
       </h1>
       <Container
         sx={{
