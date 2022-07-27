@@ -1,32 +1,44 @@
+import {
+  Card,
+  CardContent,
+  Typography,
+  Container,
+} from '@mui/material';
+
 export async function getServerSideProps(context) {
-  const { params } = context;
+  const {params} = context
+
   
-  const userResponse = await fetch(
-    `https://randomuser.me/api/?results=20`
-  );
+  const userResponse = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.postId}?userId=1`);
   const userData = await userResponse.json();
 
   
   return {
     props: {
-        params,
       user: userData,
        
     },
   };
 }
 
-export default function Post({ params, user }) {
+export default function Post({ user }) {
     console.log(user)
   return (
     <div>
-      <h1>{user.results[params.postId].gender}</h1>
-      <div >
-        <p>{user.results[params.postId].name.first}</p>
-        <p>{user.results[params.postId].email}</p>
-        <p>{user.results[params.postId].dob.age}</p>
-        <p>{user.results[params.postId].location.city}</p>
-      </div>
+      <Container
+      sx={{
+        display: 'block',
+        margin:'10% , 0%',
+        // border:'solid black 2px',
+        alignItems:'center',
+        background:'steelblue',
+        color:'white'
+      }}>
+        
+      <h1 key={user.id}>Body: {user.title}</h1>
+      
+      </Container>
+      
     </div>
   );
 }
