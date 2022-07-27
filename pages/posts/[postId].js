@@ -35,7 +35,7 @@ export default function Post({ user }) {
         color:'white'
       }}>
         
-      <h1 key={user.id}>Body: {user.title}</h1>
+      <h1 key={user.id}>Body: {user.body}</h1>
       
       </Container>
       
