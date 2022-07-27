@@ -18,8 +18,8 @@ export async function getStaticProps() {
 
 export default function Persons({ data, images }) {
   return (
-    <div>
+    <>
       <FetchApi data={data} images={images} />
-    </div>
+    </>
   );
 }
