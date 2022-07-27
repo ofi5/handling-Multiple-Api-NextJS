@@ -1,42 +1,34 @@
-import React from 'react';
-import {
-  Container
-} from '@mui/material';
+import React from "react";
+import { Container } from "@mui/material";
 
 export async function getServerSideProps(context) {
-  const {params} = context
+  const { params } = context;
 
-  
-  const userResponse = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.postId}?userId=1`);
+  const userResponse = await fetch(
+    `https://jsonplaceholder.typicode.com/posts/${params.postId}?userId=1`
+  );
   const userData = await userResponse.json();
 
-  
   return {
     props: {
       user: userData,
-       
     },
   };
 }
 
-export default function Post({user}) {
-    
+export default function Post({ user }) {
   return (
-    
-      <Container
+    <Container
       sx={{
-        display: 'block',
-        margin:'10% , 0%',
+        display: "block",
+        margin: "10% , 0%",
         // border:'solid black 2px',
-        alignItems:'center',
-        background:'steelblue',
-        color:'white'
-      }}>
-        
+        alignItems: "center",
+        background: "steelblue",
+        color: "white",
+      }}
+    >
       <h1 key={user.id}>Body: {user.body}</h1>
-      
-      </Container>
-      
-    
+    </Container>
   );
 }
