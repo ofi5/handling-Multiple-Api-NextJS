@@ -26,8 +26,9 @@ import { boxSizing, margin, textAlign, width } from '@mui/system';
           };
         
         
-  return (<div>
-    <Typography fontWeight="bold" variant="body1">
+  return (
+  <div>
+    
     <h1 style ={{textAlign:'center' /*,border:'solid 2px green'*/}}> Handling Mulitple Api's</h1>
     <Container
       sx={{
@@ -55,9 +56,11 @@ import { boxSizing, margin, textAlign, width } from '@mui/system';
         
       >
     <CardContent>
+
          <Link href={`/posts/${item[0].id}`} passHref key={item[0].id}>
-        <div key={item[0].id} style={{/*border:'solid 2px red',*/ width:'100%', display:'flex' }}>
-        <Image 
+
+          <div key={item[0].id} style={{/*border:'solid 2px red',*/ width:'100%', display:'flex' }}>
+           <Image 
               loader={myLoader}
               // border={"solid 2px green"}
               src={`/${item[1].id}/${item[1].width}/${item[1].height}.jpg`}
@@ -65,10 +68,12 @@ import { boxSizing, margin, textAlign, width } from '@mui/system';
               width="120px"
               height="100px"
 
-            /> 
-        <p style={{/*border:'solid 2px yellow',*/ marginLeft:'30px'}}>Title:{item[0].title}</p> 
-        </div>
-    </Link>       
+            />
+            <Typography fontWeight="bold" variant="body1" sx={{marginLeft:'30px'}}>
+                      Title:{item[0].title} 
+            </Typography>
+          </div>
+        </Link>       
     </CardContent>
     </Card> 
       
@@ -76,7 +81,7 @@ import { boxSizing, margin, textAlign, width } from '@mui/system';
     }
     
     </Container>
-    </Typography>
+    
     </div>
     
   )
