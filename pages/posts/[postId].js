@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 
 export async function getServerSideProps(context) {
   const { params } = context;
@@ -28,7 +28,7 @@ export default function Post({ user }) {
         color: "white",
       }}
     >
-      <h1 key={user.id}>Body: {user.body}</h1>
+      <Typography key={user.id}>Body: {user.body}</Typography>
     </Container>
   );
 }
