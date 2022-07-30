@@ -16,10 +16,10 @@ const FetchApi = ({ data, images }) => {
 
   return (
     <div>
-      <h1 style={{ textAlign: "center" /*,border:'solid 2px green'*/ }}>
+      <Typography style={{ textAlign: "center" /*,border:'solid 2px green'*/ }}>
         
         Handling Mulitple ApiS
-      </h1>
+      </Typography>
       <Container
         sx={{
           display: "block",
