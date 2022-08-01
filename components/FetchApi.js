@@ -16,7 +16,7 @@ const FetchApi = ({ data, images }) => {
 
   return (
     <div>
-      <Typography sx={{ textAlign: "center" /*,border:'solid 2px green'*/ }}>
+      <Typography sx={{ textAlign: "center" , color:"white"/*,border:'solid 2px green'*/ }}>
         
         Handling Mulitple ApiS
       </Typography>
